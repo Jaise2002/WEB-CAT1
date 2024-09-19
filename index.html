@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <div class="logo">
+        <h1>Shoppy</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="JAISE_CV_FOR_PLACEMENT (5).pdf">PDF</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/eDqfg_LexCQ?si=PNwkCoFLnLcrGhv9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products">
+        <h2>PRODUCTS</h2>
+        <div class="product-container">
+            <!-- Product 1 -->
+            <div class="product">
+                <img src="199ab764-f112-4508-888c-86a1094624e8.17daf90b726900a539a8b9873fdea1f5.webp" alt="Product 1">
+                <h3>Product 1</h3>
+                <p>₹799</p>
+                <button onclick="addToCart('Product 1', 799)">Add to Cart</button>
+            </div>
+            <!-- Product 2 -->
+            <div class="product">
+                <img src="Apple-iphone-12-mini-Red-Color.jpg" alt="Product 2">
+                <h3>Product 2</h3>
+                <p>₹999</p>
+                <button onclick="addToCart('Product 2', 999)">Add to Cart</button>
+            </div>
+            <!-- Product 3 -->
+            <div class="product">
+                <img src="OIP.jpeg" alt="Product 3">
+                <h3>Product 3</h3>
+                <p>₹1499</p>
+                <button onclick="addToCart('Product 3', 1499)">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function addToCart(productName, price) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({ productName, price });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`${productName} added to cart.`);
+        }
+    </script>
+</body>
+</html>
